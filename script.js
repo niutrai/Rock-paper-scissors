@@ -80,6 +80,10 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+function scores(){
+    console.log(`The computer has ${computerScore}points, and you have ${humanScore}`);
+}
+
 
 
 
