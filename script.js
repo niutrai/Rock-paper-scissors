@@ -21,6 +21,7 @@ function getComputerChoice(r = 3){
 
 function getHumanChoice(h){
     h = prompt("What are you going to play, 1.Rock, 2.Paper or 3.Scissors?");
+    h = h.toLowerCase(); 
         switch (h){
             case "1":
             case "Rock":
@@ -42,6 +43,10 @@ function getHumanChoice(h){
         }
     
 }
+
+let humanScore = 0, computerScore = 0;
+
+
 
 /*
 let computer = getComputerChoice();
