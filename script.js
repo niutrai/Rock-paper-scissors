@@ -1,4 +1,4 @@
-console.log("Hello World");
+console.log("Welcome to Rock Paper Scissors");
 
 
 function getComputerChoice(r = 3){
@@ -25,7 +25,7 @@ function getComputerChoice(r = 3){
 }
 
 function getHumanChoice(h){
-    h = prompt("What are you going to play, 1.Rock, 2.Paper or 3.Scissors?");
+    h = prompt("What are you going to play, 1.Rock 2.Paper 3.Scissors?");
     h = h.toLowerCase();
     let hChoice;  
         switch (h){
@@ -97,5 +97,34 @@ function playGame(){
     }
 
     console.log("The game has ended.");
+    if (computerScore > humanScore){
+        console.log("The computer won the game.");
+    }
+    else if(humanScore > computerScore){
+        console.log("You've won the game, you're better");
+    }
+    else {
+        console.log("It's a tie");
+    }
 }
+
+function again(){
+    let answ = prompt("Do you want to play again?(Y/N)");
+    answ = answ.toLowerCase();
+    if (answ == "y" || answ == "yes"){
+        playGame();
+    }
+    else if(a == "n" || a == "no"){
+        console.log("Have a good day, noob");
+    }
+    else{
+        console.log("Only yes(y) or no(n)");
+    }
+}
+
+playGame();
+
+again();
+
+
 
