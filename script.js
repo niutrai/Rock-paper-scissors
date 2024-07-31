@@ -53,37 +53,49 @@ function getHumanChoice(h){
     return hChoice;
 }
 
-let humanScore = 0, computerScore = 0;
 
 
-function playRound(humanChoice, computerChoice){
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
-    if (computerChoice == "paper" && humanChoice == "rock"){
-        console.log("You lose! Paper beats Rock");
-        computerScore ++;
+
+function playGame(){
+    let humanScore = 0, computerScore = 0;
+
+
+    function playRound(humanChoice, computerChoice){
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
+        if (computerChoice == "paper" && humanChoice == "rock"){
+            console.log("You lose! Paper beats Rock");
+            computerScore ++;
+        }
+        else if (computerChoice == "rock" && humanChoice == "scissors"){
+            console.log("You lose! Rock beats Scissors");
+            computerScore ++;
+        }
+        if (humanChoice== "paper" && computerChoice == "rock"){
+            console.log("You win! Paper beats Rock");
+            humanScore ++;
+        }
+        else if (humanChoice == "rock" && computerChoice == "scissors"){
+            console.log("You win! Rock beats Scissors");
+            humanScore ++;
+        }
+        else{
+            console.log("It's a tie, you've made the same moves")
+        }
     }
-    else if (computerChoice == "rock" && humanChoice == "scissors"){
-        console.log("You lose! Rock beats Scissors");
-        computerScore ++;
+
+    function scores(){
+        console.log(`The computer has ${computerScore} points, and you have ${humanScore} points`);
     }
-    if (humanChoice== "paper" && computerChoice == "rock"){
-        console.log("You win! Paper beats Rock");
-        humanScore ++;
+    
+    
+    
+    for (i = 1; i <= 5; i++){
+        console.log(`This is round ${i}`);
+        scores();
+        playRound();
     }
-    else if (humanChoice == "rock" && computerChoice == "scissors"){
-        console.log("You win! Rock beats Scissors");
-        humanScore ++;
-    }
-    else{
-        console.log("It's a tie, you've made the same moves")
-    }
+
+    console.log("The game has ended.");
 }
-
-function scores(){
-    console.log(`The computer has ${computerScore}points, and you have ${humanScore}`);
-}
-
-
-
 
